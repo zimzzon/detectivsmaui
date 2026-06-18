@@ -4,9 +4,6 @@ from PIL import Image
 # --- KONFIGURATION & SETUP ---
 APP_TITLE = "🕵️‍♂️ Detective Smaui: Die drei Geschenke-Fälle"
 
-# --- KONFIGURATION & SETUP ---
-APP_TITLE = "🕵️‍♂️ Detective Smaui: Die drei Geschenke-Fälle"
-
 # Lade das Hauptbild von Detective Smaui (detective-smaui-foto.png)
 try:
     smaui_image = Image.open('detective-smaui-foto.png')
@@ -15,60 +12,76 @@ except FileNotFoundError:
     st.stop()
 
 # --- DIE DREI ERMITTLUNGSAKTEN (FRAGEN & CODES) ---
-# Hier kannst du jetzt für jeden Fall die echten Fragen, Typen und Antworten eintragen!
 FAELLE = [
     {
         "fall_name": "Fall 1: Das Geheimnis des Origami-Pingu",
-        "story": "Ein extrem gemütliches Faultier hat sich am Strand zusammengerollt und weigert sich, aufzustehen. Es murmelt ständig etwas von einem papiernen Pinguin... Wir müssen das Rätsel um das Spiel 'Sea Salt & Paper' lösen!",
+        "story": """Die Sonne brennt heiß vom Himmel, der Sand ist perfekt gewärmt – eigentlich die absoluten Traumkonditionen für einen tiefentspannten Tag am Strand. Genau das hatten sich die Faultiere auch fest vorgenommen: exzessives, professionelles Faulenzen in der Sonne. 
+
+Damit zwischen den Nickerchen keine Langeweile aufkommt, hatte Mr. Fauls versprochen, ein ganz besonderes Spiel einzupacken. Doch als Fauline und Coco die Strandtasche durchwühlen, bricht leichte Panik aus: **Das Spiel ist unauffindbar!** Wo im Dünensand hat er es bloß versteckt?
+
+Eine Nachfrage beim Meister des Tiefschlafs bringt absolut gar nichts. Mr. Fauls ist augenblicklich im Land der Träume versunken, völlig weggetreten und absolut nicht mehr ansprechbar – typisch Mr. Fauls eben! Das Einzige, was er im Schlaf leise und kryptisch vor sich hin murmelt, klingt wie: *„...Papier... Pinguin...“*
+
+Fauline und Coco stehen vor einem Rätsel. Papier? Pinguin? Das macht im heißen Sand doch überhaupt keinen Sinn! In ihrer Verzweiflung bleibt den beiden nur noch eine Hoffnung: **Detective Smaui!** 
+
+Unter den Faultieren genießt du schließlich nicht ohne Grund den ehrfurchtssvollen Spitznamen *„Das Trüffelschwein“* – denn deinem messerscharfen Verstand und deiner legendären Spürnase bleibt absolut nichts verborgen. 
+
+Fauline und Coco blicken dich mit großen, bittenden Faultieraugen an: 
+**„Detective Smaui, bitte hilf uns! Du musst dieses Rätsel für uns lösen! Schau dir die Beweisfotos an, die vor dir liegen...“**""",
         "questions": [
             {
                 "type": "code",
-                "text": "Detective Smaui braucht den ersten Hinweis: Welches der ausgedruckten Fotos zeigt das Faultier in seiner natürlichen, absolut tiefentspannten Umgebung? Findet das Bild und gebt den Code von der Rückseite ein!",
-                "hint": "Hinweis von Smaui: Sucht nach dem Bild, auf dem man vor lauter Gemütlichkeit fast selbst einschläft.",
-                "correct_answer": "PINGU01"
+                "text": "Fauline reicht dir die Lupe: 'Haben wir nicht ein Foto wo Mr. Fauls schonmal so tief im Schlummerland war? Finde das Bild, dreh es um und gib den Code ein!'",
+                "hint": "Ich glaube das war ein Faultiersalat.",
+                "correct_answer": "PNGN"
             },
             {
                 "type": "multiple-choice",
-                "text": "Bevor uns das Faultier den Weg zum ersten Geschenk zeigt, ein kleiner Test: Wie viele Sekunden kann ein Faultier schätzungsweise die Luft anhalten (länger als ein Delfin!)?",
-                "options": ["Etwa 10 Minuten", "Bis zu 40 Minuten", "Gar nicht, es vergisst es einfach"],
-                "hint": "Smauis Tipp: Sie sind langsamer, aber unter Wasser wahre Meister!",
-                "correct_answer": "Bis zu 40 Minuten"
+                "text": "Wahrscheinlich träumt Mr. Fauls von seiner Weltreise damals. Schließlich hat er dort auch Fauline kennengelernt. Wo warst Du eigentlich damals?",
+                "options": ["Lofer", "Mallorca", "Köln"],
+                "hint": "Viva Espana!",
+                "correct_answer": "Mallorca"
+            },
+            {
+                "type": "multiple-choice",
+                "text": "Mhh... so wirklich bringt Euch das nicht weiter. Manchmal erzählt Mr. Fauls Fauline und Faulinho auch von seiner Zeit bevor er Fauline kennengelernt hat. Wie war nochmal die Bewegung die dafür gesorgt hat, dass Mr. Fauls so richtig aufgeblüht ist?",
+                "options": ["#wakeupmrfauls", "#FauliForPresident", "#freemrfauls"],
+                "hint": "Wer hier einen Hinweis braucht...",
+                "correct_answer": "#freemrfauls"
+            },
+            {
+                "type": "code",
+                "text": "Fauline hat einen Geistesblitz, #freemrfauls das ist es! Wahrscheinlich hat Mr. Fauls dort das Spiel versteckt! Gib die Lösung als Code ein.",
+                "hint": "Andere schlafen drauf, Mr. Fauls darunter.",
+                "correct_answer": "Kissen"
             }
         ],
-        "reward_text": "🎉 Fall 1 gelöst! Das Faultier pennt weiter, aber es hat euch das erste Geschenk hinterlassen: Das Spiel **Sea Salt & Paper**! (Hier kannst du das echte Geschenk überreichen!)"
+        "reward_text": "🎉 Unglaublich! Detective Smaui hat messerscharf kombiniert! Fauline und Coco tanzen vor Freude. Mr. Fauls pennt zwar weiter, aber deine Spürnase hat das Versteck enttarnt: Das erste Geschenk wurde erfolgreich von dir aufgespürt! 🎁"
     },
     {
         "fall_name": "Fall 2: Wo sind Bollecks Geschwister?",
-        "story": "Es ist Zeit für die große Bolleckaction am Strand! Doch Schock schwere Not: Die Faultier-Geschwisterbande hat sich im Dünensand aus den Augen verloren. Detective Smaui muss die Familienzusammenführung koordinieren.",
+        "story": "Die Ermittlung geht weiter, Detective Smaui! Kaum ist das erste Rätsel gelöst, wartet schon das nächste Abenteuer bei der Beachaction...",
         "questions": [
             {
                 "type": "code",
                 "text": "Sucht das ausgedruckte Bild, das die legendärste Beachaction oder Bolleckaction eurer bisherigen Reisen zeigt. Welcher Code steht hinten drauf?",
-                "hint": "Smauis Tipp: Sand, Sonne und jede Menge Action sind hier zu sehen!",
+                "hint": "Hier kommt bald dein echter Hinweis hin!",
                 "correct_answer": "BEACH99"
             }
         ],
-        "reward_text": "🎉 Fall 2 gelöst! Die Geschwister sind wieder vereint und bereit für die nächste Bolleckaction! Zeit für Geschenk Nummer 2!"
+        "reward_text": "🎉 Fall 2 gelöst! Die Geschwister sind wieder vereint und bereit für die nächste Bolleckaction! Zeit für Geschenk Nummer 2! 🎁"
     },
     {
         "fall_name": "Fall 3: Wer hat Juie gesehen?",
-        "story": "Das große Finale! Der kleine Baby Yoda – bei uns nur bekannt als Juie – ist spurlos verschwunden. Gerüchten zufolge hat er sich unter die Mäuseschaft gemischt, um Detective Smaui zu besuchen. Wir müssen ihn finden, um das finale Geheimnis zu lüften!",
+        "story": "Das große Finale für Detective Smaui! Der kleine Baby Yoda (Juie) hat sich unter die Mäuseschaft gemischt. Finden wir ihn!",
         "questions": [
             {
-                "type": "multiple-choice",
-                "text": "Juie hat eine Nachricht in intergalaktischer Mäusesprache hinterlassen. Was ist seine absolute Lieblingsspeise, wenn er nicht gerade die Macht benutzt?",
-                "options": ["Blaukekse", "Käsehäppchen", "Krabben-Suppe"],
-                "hint": "Smauis Tipp: In einer bestimmten Folge klaut er sie einem anderen Kind...",
-                "correct_answer": "Blaukekse"
-            },
-            {
                 "type": "code",
-                "text": "Das letzte Rätsel! Findet das Bild, auf dem die ganze Mäuseschaft (oder eure beste gemeinsame Erinnerung) versammelt ist. Das ist der Weg zum Hauptgeschenk!",
-                "hint": "Der allerletzte Code trennt euch vom Schatz. Schaut ganz genau hin!",
-                "correct_answer": "JUICESTART"
+                "text": "Findet das finale Bild für das Hauptgeschenk. Welcher Code versteckt sich hier?",
+                "hint": "Der allerletzte Code trennt dich vom Schatz.",
+                "correct_answer": "FINALE"
             }
         ],
-        "reward_text": "🏆 🎉 MEISTERDETEKTIVE! Ihr habt Juie gefunden und alle drei Fälle gelöst. Detective Smaui zieht seinen Hut vor euch. Hier ist euer wohlverdientes Hauptgeschenk! 🎁"
+        "reward_text": "🏆 🎉 MEISTERDETEKTIVIN! Du hast alle drei Fälle gelöst. Detective Smaui (aka das Trüffelschwein) hat wieder einmal zugeschlagen. Hier ist dein wohlverdientes Hauptgeschenk! 🎁"
     }
 ]
 
@@ -89,7 +102,7 @@ st.write("---")
 # SPIEL KOMPLETT VORBEI
 if st.session_state.game_completed:
     st.balloons()
-    st.image(smaui_image, caption="Detective Smaui hat den Fall abgeschlossen!", use_column_width=True)
+    st.image(smaui_image, caption="Detective Smaui hat alle Fälle abgeschlossen!", use_column_width=True)
     st.success(FAELLE[-1]["reward_text"])
     if st.button("Das Abenteuer neustarten"):
         st.session_state.current_fall = 0
@@ -98,7 +111,7 @@ if st.session_state.game_completed:
         st.session_state.game_completed = False
         st.rerun()
 
-# EIN FALL WURDE GERADE GELÖST
+# EIN FALL WURDE GERADE GELÖST (Hier schaltet die App nach Fall 1 weiter!)
 elif st.session_state.fall_completed:
     st.balloons()
     aktueller_fall = FAELLE[st.session_state.current_fall]
@@ -118,15 +131,13 @@ else:
     aktueller_fall = FAELLE[fall_idx]
     aktuelle_frage = aktueller_fall["questions"][frag_idx]
     
-    # Fortschrittsanzeige über alle Fälle hinweg
     st.subheader(aktueller_fall["fall_name"])
     st.caption(f"Frage {frag_idx + 1} von {len(aktueller_fall['questions'])} in diesem Fall")
     
-    # Layout: Smauis Bild links, Rätsel rechts
     col1, col2 = st.columns([1, 2])
     
     with col1:
-        st.image(smaui_image, caption="Detective Smaui ermittelt...", use_column_width=True)
+        st.image(smaui_image, caption="Detective Smauis Ermittlungsakte", use_column_width=True)
         
     with col2:
         if frag_idx == 0:
@@ -137,7 +148,6 @@ else:
         with st.expander("💡 Lupe herausholen (Hinweis)"):
             st.write(aktuelle_frage["hint"])
             
-        # Eingabe-Logik je nach Typ
         user_submission = None
         
         if aktuelle_frage["type"] == "code":
@@ -150,7 +160,6 @@ else:
             if st.button("Antwort einloggen 📝", type="primary") and choice != "Bitte auswählen...":
                 user_submission = choice
                 
-        # Auswertung
         if user_submission is not None:
             is_correct = False
             if aktuelle_frage["type"] == "code":
@@ -159,17 +168,15 @@ else:
                 is_correct = user_submission == aktuelle_frage["correct_answer"]
                 
             if is_correct:
-                st.success("🕵️‍♂️ Smaui sagt: Kombiniert wie ein Meister! Richtig!")
+                st.success("🕵️‍♂️ Hervorragend kombiniert, Detective Smaui! Das ist richtig!")
                 
-                # Prüfen, ob es noch mehr Fragen im aktuellen Fall gibt
                 if frag_idx + 1 < len(aktueller_fall["questions"]):
                     st.session_state.current_question += 1
                 else:
-                    # Fall ist geschafft!
                     if fall_idx + 1 < len(FAELLE):
                         st.session_state.fall_completed = True
                     else:
                         st.session_state.game_completed = True
                 st.rerun()
             else:
-                st.error("❌ Das war leider falsch. Detective Smaui schüttelt den Kopf. Sucht weiter!")
+                st.error("❌ Das war leider falsch. Detective Smaui, schau dir die Beweise lieber noch einmal an!")
