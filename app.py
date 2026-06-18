@@ -19,7 +19,7 @@ FAELLE = [
 
 Damit zwischen den Nickerchen keine Langeweile aufkommt, hatte Mr. Fauls versprochen, ein ganz besonderes Spiel einzupacken. Doch als Fauline und Coco die Strandtasche durchwühlen, bricht leichte Panik aus: **Das Spiel ist unauffindbar!** Wo im Dünensand hat er es bloß versteckt?
 
-Eine Nachfrage beim Meister des Tiefschlafs bringt absolut gar nichts. Mr. Fauls ist augenblicklich im Land der Träume versunken, völlig weggetreten und absolut nicht mehr ansprechbar – typisch Mr. Fauls eben! Das Einzige, was er im Schlaf leise und kryptisch vor sich hin murmelt, klingt wie: *„...Papier... Pinguin...“*
+Eine Nachfrage beim Meister des Tiefschlafs bringt absolut gar nichts. Mr. Fauls is augenblicklich im Land der Träume versunken, völlig weggetreten und absolut nicht mehr ansprechbar – typisch Mr. Fauls eben! Das Einzige, was er im Schlaf leise und kryptisch vor sich hin murmelt, klingt wie: *„...Papier... Pinguin...“*
 
 Fauline und Coco stehen vor einem Rätsel. Papier? Pinguin? Das macht im heißen Sand doch überhaupt keinen Sinn! In ihrer Verzweiflung bleibt den beiden nur noch eine Hoffnung: **Detective Smaui!** 
 
@@ -59,27 +59,66 @@ Fauline und Coco blicken dich mit großen, bittenden Faultieraugen an:
     },
     {
         "fall_name": "Fall 2: Wo sind Bollecks Geschwister?",
-        "story": "Die Ermittlung geht weiter, Detective Smaui! Kaum ist das erste Rätsel gelöst, wartet schon das nächste Abenteuer bei der Beachaction...",
+        "story": """Kaum ist das Rätsel um das Spiel gelöst, herrscht schon wieder helle Aufregung am Strand. Plötzlich kommt Miguel völlig außer Atem angelaufen. Er ist extrem nervös, fuchtelt mit den Armen und fängt sofort an, wie ein Wasserfall auf dich – **Detective Smaui** – einzureden. 
+
+Er wollte eigentlich gerade ein großes Match mit Bollecks Geschwistern starten, doch der Schock sitzt tief: **Die Zwillinge sind spurlos verschwunden!** Niemand hat sie in den Dünen gesehen und der sportliche Strandtag droht ins Wasser zu fallen. Und wir alle wissen: Ohne die beiden fehlt einfach die wichtigste Bolleckaction!
+
+Miguel blickt dich mit flehenden Augen an: **„Bitte hilf mir, die Zwillinge zu finden, Schmiegi braucht dich jetzt, Detective Smaui!“** 
+
+*Du rückst deine Deerstalker-Mütze zurecht, nimmst die Lupe in die Pfote und scannst den heißen Sand nach den ersten Spuren ab. Dein detektivischer Instinkt sagt dir, dass die Zwillinge einen Hinweis hinterlassen haben müssen...*""",
         "questions": [
             {
                 "type": "code",
-                "text": "Sucht das ausgedruckte Bild, das die legendärste Beachaction oder Bolleckaction eurer bisherigen Reisen zeigt. Welcher Code steht hinten drauf?",
-                "hint": "Hier kommt bald dein echter Hinweis hin!",
-                "correct_answer": "BEACH99"
+                "text": "Irgendwo in den Bildern muss sich ein Hinweis verstecken. Welchen Urlaub mag Schmiegi am liebsten? Finde alle passenden Fotos und bilde mit den Buchstaben auf den Rückseiten den Namen der schnellsten Skipuppe.",
+                "hint": "Pisten.......!",
+                "correct_answer": "CARLOS"
+            },
+            {
+                "type": "code",
+                "text": "Das hat also schonmal als Code gestimmt, wahrscheinlich müssen wir weiter in den Bergen suchen. Auf welchem Bild hast du das größte Abenteuer einer Smaui erlebt?",
+                "hint": "Schmetterlinge, Schneefelder und ein sehr kleines Bett, aber immer dabei: das Glätteisen!",
+                "correct_answer": "GPFL"
+            },
+            {
+                "type": "multiple-choice",
+                "text": "Wir kommen dem ganzen immer Näher, doch Miggi wird auch immer ungehaltener - so kennen wir ihn. Die nächste Frage bezieht sich auf ein Bild mit dem Code (auf der Rückseite) STBB. Wo wurde dieses Bild aufgenommen?",
+                "options": ["Lofer", "Alpendorf", "Paguera"],
+                "hint": "Ist das nicht das Steinbergbad?",
+                "correct_answer": "Lofer"
+            },
+            {
+                "type": "code",
+                "text": "Plötzlich hat Fauline eine Idee, vielleicht ist der nächste Hinweis auf einem Gipfelfoto versteckt, aber nicht deinem Gipfelfoto...welches Bild könnte es sein?",
+                "hint": "Hier kommt der Kleine ganz groß raus!",
+                "correct_answer": "FLNH"
+            },
+            {
+                "type": "code",
+                "text": "Absolut richtig! Mann war das ein Abenteuer für den kleinen Racker. Plötzlich wacht Mr. Fauls auf. Nachdem Detective Smaui ihn auf den neuesten Stand gebracht hat, hat Mr. Fauls eine geniale und doch so simple Idee: Habt Ihr schon bei Bolleck geschaut ob seine Schwestern dort sind? Eventuell steht dort auch der nächste Code.",
+                "hint": "Klopf-klopf!",
+                "correct_answer": "BLLK"
             }
         ],
-        "reward_text": "🎉 Fall 2 gelöst! Die Geschwister sind wieder vereint und bereit für die nächste Bolleckaction! Zeit für Geschenk Nummer 2! 🎁"
+        "reward_text": "🎉 Fall 2 gelöst! Unglaublich, Detective Smaui! Die Zwillinge sind wieder da und Schmiegi kann endlich die Bolleckaction starten. Als Dankeschön für deinen messerscharfen Verstand darfst du dir jetzt Geschenk Nummer 2 nehmen! 🎁"
     },
     {
         "fall_name": "Fall 3: Wer hat Juie gesehen?",
-        "story": "Das große Finale für Detective Smaui! Der kleine Baby Yoda (Juie) hat sich unter die Mäuseschaft gemischt. Finden wir ihn!",
+        "story": """Nachdem die Faultiere zuerst das heißersehnte Spiel und anschließend mit deiner meisterhaften Hilfe auch Bollecks Schwestern unversehrt wiedergefunden haben, kehrt am Strand langsam wieder Ruhe ein. Die Erleichterung ist groß, Miguel atmet auf und Mr. Fauls murmelt zufrieden im Schlaf. 
+
+Doch als du deinen Blick schweifen lässt, schlägt dein detektivischer Instinkt plötzlich Alarm. Das Trüffelschwein spürt es sofort: Die Harmonie trügt. Irgendwer oder irgendetwas fehlt hier doch in der Runde... 
+
+Ein kurzer Kontrollblick durch die Lupe bestätigt den schrecklichen Verdacht. Jemand hat die allgemeine Verwirrung genutzt und sich klammheimlich aus dem Staub gemacht! 
+
+**Detective Smaui, die Ermittlung läuft wieder! Wer fehlt am Strand?**""",
         "questions": [
             {
-                "type": "code",
-                "text": "Findet das finale Bild für das Hauptgeschenk. Welcher Code versteckt sich hier?",
-                "hint": "Der allerletzte Code trennt dich vom Schatz.",
-                "correct_answer": "FINALE"
+                "type": "multiple-choice",
+                "text": "Wer hat sich still und leise aus dem Staub gemacht und die Mäuseschaft in helle Aufregung versetzt?",
+                "options": ["Juie", "Momo", "Kraki"],
+                "hint": "Er hat große Ohren, liebt intergalaktische Abenteuer und wird von allen schmerzlich vermisst!",
+                "correct_answer": "Juie"
             }
+            # Hier bauen wir im nächsten Schritt deine restlichen Fragen für das Finale ein!
         ],
         "reward_text": "🏆 🎉 MEISTERDETEKTIVIN! Du hast alle drei Fälle gelöst. Detective Smaui (aka das Trüffelschwein) hat wieder einmal zugeschlagen. Hier ist dein wohlverdientes Hauptgeschenk! 🎁"
     }
@@ -111,7 +150,7 @@ if st.session_state.game_completed:
         st.session_state.game_completed = False
         st.rerun()
 
-# EIN FALL WURDE GERADE GELÖST (Hier schaltet die App nach Fall 1 weiter!)
+# EIN FALL WURDE GERADE GELÖST
 elif st.session_state.fall_completed:
     st.balloons()
     aktueller_fall = FAELLE[st.session_state.current_fall]
