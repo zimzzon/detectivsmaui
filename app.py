@@ -4,11 +4,14 @@ from PIL import Image
 # --- KONFIGURATION & SETUP ---
 APP_TITLE = "🕵️‍♂️ Detective Smaui: Die drei Geschenke-Fälle"
 
-# Lade das Hauptbild von Detective Smaui (image_e3a87d.jpg)
+# --- KONFIGURATION & SETUP ---
+APP_TITLE = "🕵️‍♂️ Detective Smaui: Die drei Geschenke-Fälle"
+
+# Lade das Hauptbild von Detective Smaui (detective-smaui-foto.png)
 try:
-    smaui_image = Image.open('image_e3a87d.jpg')
+    smaui_image = Image.open('detective-smaui-foto.png')
 except FileNotFoundError:
-    st.error("Fehler: Die Datei 'image_e3a87d.jpg' wurde nicht gefunden. Bitte lade sie im Repository hoch!")
+    st.error("Fehler: Die Datei 'detective-smaui-foto.png' wurde nicht gefunden. Bitte lade sie im gleichen Ordner hoch!")
     st.stop()
 
 # --- DIE DREI ERMITTLUNGSAKTEN (FRAGEN & CODES) ---
