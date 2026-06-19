@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # --- KONFIGURATION & SETUP ---
-APP_TITLE = "🕵️‍♂️ Detective Smaui: Die drei Geschenke-Fälle"
+APP_TITLE = "🕵️‍♂️ Detective Smaui: Die Fallakte der Faultiere"
 
 # Lade das Hauptbild von Detective Smaui (detective-smaui-foto.png)
 try:
@@ -19,7 +19,7 @@ FAELLE = [
 
 Damit zwischen den Nickerchen keine Langeweile aufkommt, hatte Mr. Fauls versprochen, ein ganz besonderes Spiel einzupacken. Doch als Fauline und Coco die Strandtasche durchwühlen, bricht leichte Panik aus: **Das Spiel ist unauffindbar!** Wo im Dünensand hat er es bloß versteckt?
 
-Eine Nachfrage beim Meister des Tiefschlafs bringt absolut gar nichts. Mr. Fauls is augenblicklich im Land der Träume versunken, völlig weggetreten und absolut nicht mehr ansprechbar – typisch Mr. Fauls eben! Das Einzige, was er im Schlaf leise und kryptisch vor sich hin murmelt, klingt wie: *„...Papier... Pinguin...“*
+Eine Nachfrage beim Meister des Tiefschlafs bringt absolut gar nichts. Mr. Fauls ist augenblicklich im Land der Träume versunken, völlig weggetreten und absolut nicht mehr ansprechbar – typisch Mr. Fauls eben! Das Einzige, was er im Schlaf leise und kryptisch vor sich hin murmelt, klingt wie: *„...Papier... Pinguin...“*
 
 Fauline und Coco stehen vor einem Rätsel. Papier? Pinguin? Das macht im heißen Sand doch überhaupt keinen Sinn! In ihrer Verzweiflung bleibt den beiden nur noch eine Hoffnung: **Detective Smaui!** 
 
@@ -36,7 +36,7 @@ Fauline und Coco blicken dich mit großen, bittenden Faultieraugen an:
             },
             {
                 "type": "multiple-choice",
-                "text": "Wahrscheinlich träumt Mr. Fauls von seiner Weltreise damals. Schließlich hat er dort auch Fauline kennengelernt. Wo warst Du eigentlich damals?",
+                "text": "Sehr gut Detective, das konnte nur ein geschultes Auge erkennen. Wahrscheinlich träumt Mr. Fauls von seiner Weltreise damals. Schließlich hat er dort auch Fauline kennengelernt. Wo warst Du eigentlich damals?",
                 "options": ["Lofer", "Mallorca", "Köln"],
                 "hint": "Viva Espana!",
                 "correct_answer": "Mallorca"
@@ -118,13 +118,14 @@ Ein kurzer Kontrollblick durch die Lupe bestätigt den schrecklichen Verdacht. J
                 "hint": "Er hat große Ohren, liebt intergalaktische Abenteuer und wird von allen schmerzlich vermisst!",
                 "correct_answer": "Juie"
             }
-            # Hier bauen wir im nächsten Schritt deine restlichen Fragen für das Finale ein!
         ],
         "reward_text": "🏆 🎉 MEISTERDETEKTIVIN! Du hast alle drei Fälle gelöst. Detective Smaui (aka das Trüffelschwein) hat wieder einmal zugeschlagen. Hier ist dein wohlverdientes Hauptgeschenk! 🎁"
     }
 ]
 
 # --- SESSION STATE INITIALISIERUNG ---
+if "is_smaui" not in st.session_state:
+    st.session_state.is_smaui = False
 if "current_fall" not in st.session_state:
     st.session_state.current_fall = 0
 if "current_question" not in st.session_state:
@@ -138,84 +139,107 @@ if "game_completed" not in st.session_state:
 st.title(APP_TITLE)
 st.write("---")
 
-# SPIEL KOMPLETT VORBEI
-if st.session_state.game_completed:
-    st.balloons()
-    st.image(smaui_image, caption="Detective Smaui hat alle Fälle abgeschlossen!", use_column_width=True)
-    st.success(FAELLE[-1]["reward_text"])
-    if st.button("Das Abenteuer neustarten"):
-        st.session_state.current_fall = 0
-        st.session_state.current_question = 0
-        st.session_state.fall_completed = False
-        st.session_state.game_completed = False
-        st.rerun()
-
-# EIN FALL WURDE GERADE GELÖST
-elif st.session_state.fall_completed:
-    st.balloons()
-    aktueller_fall = FAELLE[st.session_state.current_fall]
-    st.success(aktueller_fall["reward_text"])
-    
-    if st.button("Nächsten Fall in der Akte öffnen 📂", type="primary"):
-        st.session_state.current_fall += 1
-        st.session_state.current_question = 0
-        st.session_state.fall_completed = False
-        st.rerun()
-
-# REGULÄRER SPIELABLAUF
-else:
-    fall_idx = st.session_state.current_fall
-    frag_idx = st.session_state.current_question
-    
-    aktueller_fall = FAELLE[fall_idx]
-    aktuelle_frage = aktueller_fall["questions"][frag_idx]
-    
-    st.subheader(aktueller_fall["fall_name"])
-    st.caption(f"Frage {frag_idx + 1} von {len(aktueller_fall['questions'])} in diesem Fall")
+# SCHRITT 0: DER IDENTITÄTS-CHECK
+if not st.session_state.is_smaui:
+    st.subheader("🔒 Streng geheim – Zutrittskontrolle")
     
     col1, col2 = st.columns([1, 2])
-    
     with col1:
-        st.image(smaui_image, caption="Detective Smauis Ermittlungsakte", use_column_width=True)
-        
+        st.image(smaui_image, caption="Identität wird geprüft...", use_column_width=True)
     with col2:
-        if frag_idx == 0:
-            st.info(aktueller_fall["story"])
+        st.write("""
+        Halt! Diese Ermittlungsakten enthalten hochbrisante Informationen über die Faultiere, 
+        geheime Pisten-Codes und intergalaktische Mäuse-Verschwörungen.
         
-        st.markdown(f"**Ermittlungsschritt:** {aktuelle_frage['text']}")
+        Der Zugriff ist ausschließlich der Chef-Ermittlerin (auch bekannt als **Das Trüffelschwein**) gestattet.
+        """)
         
-        with st.expander("💡 Lupe herausholen (Hinweis)"):
-            st.write(aktuelle_frage["hint"])
+        # Ein schöner Bestätigungsknopf
+        if st.button("Ich bestätige, dass ich Detective Smaui bist! 🕵️‍♂️✨", type="primary"):
+            st.session_state.is_smaui = True
+            st.rerun()
+
+# WENN CKECH BESTANDEN: DAS EIGENTLICHE SPIEL STARTET
+else:
+    # SPIEL KOMPLETT VORBEI
+    if st.session_state.game_completed:
+        st.balloons()
+        st.image(smaui_image, caption="Detective Smaui hat alle Fälle abgeschlossen!", use_column_width=True)
+        st.success(FAELLE[-1]["reward_text"])
+        if st.button("Das Abenteuer neustarten"):
+            st.session_state.is_smaui = False
+            st.session_state.current_fall = 0
+            st.session_state.current_question = 0
+            st.session_state.fall_completed = False
+            st.session_state.game_completed = False
+            st.rerun()
+
+    # EIN FALL WURDE GERADE GELÖST
+    elif st.session_state.fall_completed:
+        st.balloons()
+        aktueller_fall = FAELLE[st.session_state.current_fall]
+        st.success(aktueller_fall["reward_text"])
+        
+        if st.button("Nächsten Fall in der Akte öffnen 📂", type="primary"):
+            st.session_state.current_fall += 1
+            st.session_state.current_question = 0
+            st.session_state.fall_completed = False
+            st.rerun()
+
+    # REGULÄRER SPIELABLAUF
+    else:
+        fall_idx = st.session_state.current_fall
+        frag_idx = st.session_state.current_question
+        
+        aktueller_fall = FAELLE[fall_idx]
+        aktuelle_frage = aktueller_fall["questions"][frag_idx]
+        
+        st.subheader(aktueller_fall["fall_name"])
+        st.caption(f"Frage {frag_idx + 1} von {len(aktueller_fall['questions'])} in diesem Fall")
+        
+        col1, col2 = st.columns([1, 2])
+        
+        with col1:
+            st.image(smaui_image, caption="Detective Smauis Ermittlungsakte", use_column_width=True)
             
-        user_submission = None
-        
-        if aktuelle_frage["type"] == "code":
-            user_input = st.text_input("Code eingeben:", key=f"code_{fall_idx}_{frag_idx}").strip()
-            if st.button("Code prüfen 🔑", type="primary"):
-                user_submission = user_input
-        
-        elif aktuelle_frage["type"] == "multiple-choice":
-            choice = st.radio("Antwort auswählen:", ["Bitte auswählen..."] + aktuelle_frage["options"], key=f"radio_{fall_idx}_{frag_idx}")
-            if st.button("Antwort einloggen 📝", type="primary") and choice != "Bitte auswählen...":
-                user_submission = choice
+        with col2:
+            if frag_idx == 0:
+                st.info(aktueller_fall["story"])
+            
+            st.markdown(f"**Ermittlungsschritt:** {aktuelle_frage['text']}")
+            
+            with st.expander("💡 Lupe herausholen (Hinweis)"):
+                st.write(aktuelle_frage["hint"])
                 
-        if user_submission is not None:
-            is_correct = False
+            user_submission = None
+            
             if aktuelle_frage["type"] == "code":
-                is_correct = user_submission.lower() == aktuelle_frage["correct_answer"].lower()
-            else:
-                is_correct = user_submission == aktuelle_frage["correct_answer"]
-                
-            if is_correct:
-                st.success("🕵️‍♂️ Hervorragend kombiniert, Detective Smaui! Das ist richtig!")
-                
-                if frag_idx + 1 < len(aktueller_fall["questions"]):
-                    st.session_state.current_question += 1
+                user_input = st.text_input("Code eingeben:", key=f"code_{fall_idx}_{frag_idx}").strip()
+                if st.button("Code prüfen 🔑", type="primary"):
+                    user_submission = user_input
+            
+            elif aktuelle_frage["type"] == "multiple-choice":
+                choice = st.radio("Antwort auswählen:", ["Bitte auswählen..."] + aktuelle_frage["options"], key=f"radio_{fall_idx}_{frag_idx}")
+                if st.button("Antwort einloggen 📝", type="primary") and choice != "Bitte auswählen...":
+                    user_submission = choice
+                    
+            if user_submission is not None:
+                is_correct = False
+                if aktuelle_frage["type"] == "code":
+                    is_correct = user_submission.lower() == aktuelle_frage["correct_answer"].lower()
                 else:
-                    if fall_idx + 1 < len(FAELLE):
-                        st.session_state.fall_completed = True
+                    is_correct = user_submission == aktuelle_frage["correct_answer"]
+                    
+                if is_correct:
+                    st.success("🕵️‍♂️ Hervorragend kombiniert, Detective Smaui! Das ist richtig!")
+                    
+                    if frag_idx + 1 < len(aktueller_fall["questions"]):
+                        st.session_state.current_question += 1
                     else:
-                        st.session_state.game_completed = True
-                st.rerun()
-            else:
-                st.error("❌ Das war leider falsch. Detective Smaui, schau dir die Beweise lieber noch einmal an!")
+                        if fall_idx + 1 < len(FAELLE):
+                            st.session_state.fall_completed = True
+                        else:
+                            st.session_state.game_completed = True
+                    st.rerun()
+                else:
+                    st.error("❌ Das war leider falsch. Detective Smaui, schau dir die Beweise lieber noch einmal an!")
