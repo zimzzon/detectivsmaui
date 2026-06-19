@@ -103,7 +103,7 @@ Miguel blickt dich mit flehenden Augen an: **„Bitte hilf mir, die Zwillinge zu
     },
     {
         "fall_name": "Fall 3: Wer hat Juie gesehen?",
-        "story": """Nachdem die Faultiere zuerst das heißersehnte Spiel und anschließend mit deiner meisterhaften Hilfe auch Bollecks Schwestern unversehrt wiedergefunden haben, kehrt am Strand langsam wieder Ruhe ein. Die Erleichterung ist groß, Miguel atmet auf und Mr. Fauls murmelt zufrieden im Schlaf. 
+        "story": """Nachdem die Faultiere zuerst das heißersehnte Spiel und anschließend mit deiner meisterhaften Hilfe auch Bollecks Schwestern unversehrt wiedergefunden haben, kehrt am Strand langsam wieder Ruhe ein. Die Erleichterung ist groß, Miguel atmet auf und Mr. Fauls reibt sich veträumt seine Äuglein. 
 
 Doch als du deinen Blick schweifen lässt, schlägt dein detektivischer Instinkt plötzlich Alarm. Das Trüffelschwein spürt es sofort: Die Harmonie trügt. Irgendwer oder irgendetwas fehlt hier doch in der Runde... 
 
@@ -117,9 +117,50 @@ Ein kurzer Kontrollblick durch die Lupe bestätigt den schrecklichen Verdacht. J
                 "options": ["Juie", "Momo", "Kraki"],
                 "hint": "Er hat große Ohren, liebt intergalaktische Abenteuer und wird von allen schmerzlich vermisst!",
                 "correct_answer": "Juie"
+            },
+	{
+                "type": "code",
+                "text": "Potzblitz! Wie konnte sich Juie denn aus dem Staub machen....um Ihn am Starnd zu suchen brauchen wir ein Bild auf dem er aleine gut zu erkennen ist. ",
+                "hint": "Am besten ein Foto wo er alleine drauf ist!",
+                "correct_answer": "4LFR"
+            },
+{
+                "type": "code",
+                "text": "Eine sehr gute Bildauswahl. Mein Gott ist Juie süß! Aber zur Sicherheit sollten wir die anderen Bilder auch mitnehmen zur Suche. Trage als Code alle Zahlen von klein nach groß ein. ",
+                "hint": "Pro Bild eine Zahl. Zusammen dann 5 Zahlen!",
+                "correct_answer": "12447"
+            },
+{
+                "type": "code",
+                "text": "Ok, die ersten Hinweise der anderen Badegäste lassen darau schließen, dass Juie sich absichtlich versteckt. Ob er mit Schmiegi etwas Schabernack treibt? Wir sollten Schmiegi nochmal genauer Fragen. Gebe den Code MIGI ein. ",
+                "hint": "Pro Bild eine Zahl. Zusammen dann 5 Zahlen!",
+                "correct_answer": "MIGI"
+            },
+{
+                "type": "code",
+                "text": "Migi schaut schon ganz verschmitzt als Du dich in seine Richtung aufmachst. Es hätte dir vorher schon auffallen können, dass Migi auffallen gelassen war. das passt ja eigentlich nicht so wirklich zu Ihm wie wir bei Bollecks Schwestern erfahren haben. Du fragst Migi, ob er weiß wo Juie ist, aber das einzige was Migi macht ist ein Dach mit seinen Händen. Was kann das nur bedeuten? Trage den Code auf der Rückseite ein. ",
+                "hint": "Der Berg ruft!",
+                "correct_answer": "DBGR"
+            },
+
+{
+                "type": "code",
+                "text": "Migi ist beeindruckt wie schnell Du die Rätsel löst. Aber bevor er Dir den letzten Hinweis gibt, hat er noch folgende Fragen für Dich: \n 1. Auf wie vielen Bildern ist ein Smartphone zu sehen? \n 2. Auf einem Bild ist etwas zu Essen zu sehen. An welche Zahl erinnert das Bild? \n 3. Auf wie vielen Bildern bin ich zu sehen? \n 4. Auf wie vielen Bildern sind Hasen zu sehen (bzw Teile erkennbar)? ",
+                "hint": "Jede Lösung (Zahl) hintereinader geschrieben ergibt den fünfstelligen Code!",
+                "correct_answer": "38610"
+            },
+
+{
+                "type": "code",
+                "text": "Migi gibt sich geschlagen. Gegen Detective Smaui hat er keine Chance. Als letzten Hinweis übergibt Dir Miguel ein kleines Geschenk. Trage den Code auf dem Zettel im Geschenk als letzten Code ein.",
+                "hint": "Ganz dolle!",
+                "correct_answer": "LOVE"
             }
+
+
         ],
-        "reward_text": "🏆 🎉 MEISTERDETEKTIVIN! Du hast alle drei Fälle gelöst. Detective Smaui (aka das Trüffelschwein) hat wieder einmal zugeschlagen. Hier ist dein wohlverdientes Hauptgeschenk! 🎁"
+	
+        "reward_text": "🏆 🎉 MEISTERDETEKTIVIN! Du hast alle drei Fälle gelöst. Detective Smaui (aka das Trüffelschwein) hat wieder einmal zugeschlagen. Juie erwartet Dich auf dem Sofa...! 🎁"
     }
 ]
 
@@ -149,9 +190,9 @@ if not st.session_state.is_smaui:
     with col2:
         st.write("""
         Halt! Diese Ermittlungsakten enthalten hochbrisante Informationen über die Faultiere, 
-        geheime Pisten-Codes und intergalaktische Mäuse-Verschwörungen.
+        geheime Codes und intergalaktische Mäuse-Verschwörungen.
         
-        Der Zugriff ist ausschließlich der Chef-Ermittlerin (auch bekannt als **Das Trüffelschwein**) gestattet.
+        Der Zugriff ist ausschließlich der Chef-Ermittlerin Detective Smaui gestattet.
         """)
         
         # Ein schöner Bestätigungsknopf
