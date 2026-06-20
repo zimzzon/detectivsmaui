@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # --- KONFIGURATION & SETUP ---
-APP_TITLE = "🕵️‍♂️ Detective Smaui: Die Fallakte der Faultiere"
+APP_TITLE = "🐭🔎 Detective Smaui: Die Fallakte der Faultiere 🔍🐭"
 
 # Lade das Hauptbild von Detective Smaui (detective-smaui-foto.png)
 try:
@@ -120,7 +120,7 @@ Ein kurzer Kontrollblick durch die Lupe bestätigt den schrecklichen Verdacht. J
             },
 	{
                 "type": "code",
-                "text": "Potzblitz! Wie konnte sich Juie denn aus dem Staub machen....um Ihn am Starnd zu suchen brauchen wir ein Bild auf dem er aleine gut zu erkennen ist. ",
+                "text": "Potzblitz! Wie konnte sich Juie denn aus dem Staub machen....um Ihn am Strand zu suchen brauchen wir ein Bild auf dem er alleine gut zu erkennen ist. ",
                 "hint": "Am besten ein Foto wo er alleine drauf ist!",
                 "correct_answer": "4LFR"
             },
@@ -133,21 +133,21 @@ Ein kurzer Kontrollblick durch die Lupe bestätigt den schrecklichen Verdacht. J
 {
                 "type": "code",
                 "text": "Ok, die ersten Hinweise der anderen Badegäste lassen darau schließen, dass Juie sich absichtlich versteckt. Ob er mit Schmiegi etwas Schabernack treibt? Wir sollten Schmiegi nochmal genauer Fragen. Gebe den Code MIGI ein. ",
-                "hint": "Pro Bild eine Zahl. Zusammen dann 5 Zahlen!",
+                "hint": "MIGI!",
                 "correct_answer": "MIGI"
             },
 {
                 "type": "code",
-                "text": "Migi schaut schon ganz verschmitzt als Du dich in seine Richtung aufmachst. Es hätte dir vorher schon auffallen können, dass Migi auffallen gelassen war. das passt ja eigentlich nicht so wirklich zu Ihm wie wir bei Bollecks Schwestern erfahren haben. Du fragst Migi, ob er weiß wo Juie ist, aber das einzige was Migi macht ist ein Dach mit seinen Händen. Was kann das nur bedeuten? Trage den Code auf der Rückseite ein. ",
+                "text": "Migi schaut schon ganz verschmitzt als Du dich in seine Richtung aufmachst. Es hätte dir vorher schon auffallen können, dass Migi auffallend gelassen war. Das passt ja eigentlich nicht so wirklich zu Ihm wie wir bei Bollecks Schwestern erfahren haben. Du fragst Migi, ob er weiß wo Juie ist, aber das einzige was Migi macht ist ein Dach mit seinen Händen. Was kann das nur bedeuten? Trage den Code auf der Rückseite ein. ",
                 "hint": "Der Berg ruft!",
                 "correct_answer": "DBGR"
             },
 
 {
                 "type": "code",
-                "text": "Migi ist beeindruckt wie schnell Du die Rätsel löst. Aber bevor er Dir den letzten Hinweis gibt, hat er noch folgende Fragen für Dich: \n 1. Auf wie vielen Bildern ist ein Smartphone zu sehen? \n 2. Auf einem Bild ist etwas zu Essen zu sehen. An welche Zahl erinnert das Bild? \n 3. Auf wie vielen Bildern bin ich zu sehen? \n 4. Auf wie vielen Bildern sind Hasen zu sehen (bzw Teile erkennbar)? ",
-                "hint": "Jede Lösung (Zahl) hintereinader geschrieben ergibt den fünfstelligen Code!",
-                "correct_answer": "38610"
+                "text": "Migi ist beeindruckt wie schnell Du die Rätsel löst. Aber bevor er Dir den letzten Hinweis gibt, hat er noch folgende Fragen für Dich: \n 1. Auf wie vielen Bildern ist ein Smartphone zu sehen? \n 2. Auf einem Bild ist etwas zu Essen zu sehen. An welche Zahl erinnert das Bild? \n 3. Auf wie vielen Bildern bin ich zu sehen? \n 4. Auf wie vielen Bildern sind Hasen zu sehen (bzw Teile erkennbar)? Trage die Zahelen hintereinander als Code ein.",
+                "hint": "Jede Lösung (Zahl) hintereinader geschrieben ergibt den fünfstelligen Code! \n 1. Hast du auch die SPiegelungen in Brillen berücksichtigt? \n Zwei Pizzen ergeben welche Zahl? \n 3. Es sind aufjedenfall mehr als 5! \n 4. Manchmal sind Hasen Hasen und manchmal sind Hasen Sajonz.",
+                "correct_answer": "58610"
             },
 
 {
@@ -196,7 +196,7 @@ if not st.session_state.is_smaui:
         """)
         
         # Ein schöner Bestätigungsknopf
-        if st.button("Ich bestätige, dass ich Detective Smaui bist! 🕵️‍♂️✨", type="primary"):
+        if st.button("🐭🔎 Ich bestätige, dass ich Detective Smaui bin! 🔍🐭", type="primary"):
             st.session_state.is_smaui = True
             st.rerun()
 
