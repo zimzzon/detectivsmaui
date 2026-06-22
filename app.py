@@ -102,7 +102,7 @@ Miguel blickt dich mit flehenden Augen an: **„Bitte hilf mir, die Zwillinge zu
         "reward_text": "🎉 Fall 2 gelöst! Unglaublich, Detective Smaui! Die Zwillinge sind wieder da und Schmiegi kann endlich die Bolleckaction starten. Als Dankeschön für deinen messerscharfen Verstand darfst du dir jetzt Geschenk Nummer 2 nehmen! 🎁"
     },
     {
-        "fall_name": "Fall 3: Wer hat Juie gesehen?",
+        "fall_name": "Fall 3: Wo ist ...?",
         "story": """Nachdem die Faultiere zuerst das heißersehnte Spiel und anschließend mit deiner meisterhaften Hilfe auch Bollecks Schwestern unversehrt wiedergefunden haben, kehrt am Strand langsam wieder Ruhe ein. Die Erleichterung ist groß, Miguel atmet auf und Mr. Fauls reibt sich veträumt seine Äuglein. 
 
 Doch als du deinen Blick schweifen lässt, schlägt dein detektivischer Instinkt plötzlich Alarm. Das Trüffelschwein spürt es sofort: Die Harmonie trügt. Irgendwer oder irgendetwas fehlt hier doch in der Runde... 
@@ -145,8 +145,8 @@ Ein kurzer Kontrollblick durch die Lupe bestätigt den schrecklichen Verdacht. J
 
 {
                 "type": "code",
-                "text": "Migi ist beeindruckt wie schnell Du die Rätsel löst. Aber bevor er Dir den letzten Hinweis gibt, hat er noch folgende Fragen für Dich: \n 1. Auf wie vielen Bildern ist ein Smartphone zu sehen? \n 2. Auf einem Bild ist etwas zu Essen zu sehen. An welche Zahl erinnert das Bild? \n 3. Auf wie vielen Bildern bin ich zu sehen? \n 4. Auf wie vielen Bildern sind Hasen zu sehen (bzw Teile erkennbar)? Trage die Zahelen hintereinander als Code ein.",
-                "hint": "Jede Lösung (Zahl) hintereinader geschrieben ergibt den fünfstelligen Code! \n 1. Hast du auch die SPiegelungen in Brillen berücksichtigt? \n Zwei Pizzen ergeben welche Zahl? \n 3. Es sind aufjedenfall mehr als 5! \n 4. Manchmal sind Hasen Hasen und manchmal sind Hasen Sajonz.",
+                "text": "Migi ist beeindruckt wie schnell Du die Rätsel löst. Aber bevor er Dir den letzten Hinweis gibt, hat er noch folgende Fragen für Dich: \n 1. Auf wie vielen Bildern ist ein Smartphone zu sehen? \n 2. Auf einem Bild ist etwas zu Essen zu sehen. An welche Zahl erinnert das Bild? \n 3. Auf wie vielen Bildern bin ich zu sehen? \n 4. Auf wie vielen Bildern sind Hasen zu sehen (bzw Teile erkennbar)? Trage die Zahlen hintereinander als Code ein.",
+                "hint": "Jede Lösung (Zahl) hintereinader geschrieben ergibt den fünfstelligen Code! \n 1. Hast du auch die Spiegelungen in Brillen berücksichtigt? \n Zwei Pizzen ergeben welche Zahl? \n 3. Es sind aufjedenfall mehr als 5! \n 4. Manchmal sind Hasen Hasen und manchmal sind Hasen Sajonz.",
                 "correct_answer": "58610"
             },
 
